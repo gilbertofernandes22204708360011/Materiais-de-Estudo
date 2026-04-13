@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Minha Lista de Tarefas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <div id="tarefas"><div><input type="checkbox"/><span>Do LPW homework</span></div></div>
+    <div id="acoes">
+        <p><input type="text" id="nova_tarefa" /><button id="incluir_tarefa">Incluir</button>
+        </p>
+    </div>
+    <script>
+        function onClickNovaTarefa() {
+            var textoNovaTarefa = $("#nova_tarefa").val(); /*___A___*/
+            var d = $("<div></div>"); /*___B___*/
+            $("<input type='checkbox'/>").appendTo(d);
+            $("<span></span>").text(textoNovaTarefa).appendTo(d); /*___C___*/
+            d.appendTo("#tarefas"); /*___D___*/
+        }
+        $(function() { $("#incluir_tarefa").on("click", onClickNovaTarefa()); }); /*___E___*/
+    </script>
+</body>
+</html>
